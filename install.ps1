@@ -1,8 +1,8 @@
 $ErrorActionPreference = "Stop"
 
 # --- CONFIGURAZIONE ---
-$repoOwner = "TUO-USERNAME"
-$repoName  = "keyboard-clicker"
+$repoOwner = "xellafe"
+$repoName  = "quack-click"
 $branch    = "main"
 $baseUrl   = "https://raw.githubusercontent.com/$repoOwner/$repoName/$branch"
 
