@@ -1,48 +1,53 @@
-# keyboard-clicker
+# quack-clicker
 
-Script PowerShell che riproduce un suono custom ad ogni pressione di tasto. Zero dipendenze, solo Windows 11 (o 10).
+A PowerShell script that plays a "QUACK" sound on every key press, perfect for trolling your "friends".
 
-## Struttura
+## Structure
 
 ```
 keyboard-clicker/
-├── click.wav            # il tuo suono custom
-├── keyboard-click.ps1   # script principale
-├── install.ps1          # bootstrap (scarica ed esegue)
+├── click.wav            # your custom sound
+├── keyboard-click.ps1   # main script
+├── install.ps1          # bootstrapper (downloads and runs)
 └── README.md
 ```
 
 ## One-liner
 
-Apri PowerShell ed esegui:
+Open PowerShell and run:
 
 ```powershell
 irm https://raw.githubusercontent.com/xellafe/quack-click/main/install.ps1 | iex
 ```
 
-Questo scarica lo script e il file audio in `%TEMP%\keyboard-clicker\` e lancia tutto in background (finestra nascosta).
-
-## Esecuzione manuale
+For a shorter version:
 
 ```powershell
-# Con il suono nella stessa cartella
+irm https://bit.ly/quack-click | iex
+```
+
+This command downloads the script and the audio file to `%TEMP%\keyboard-clicker\` and starts the process in background.
+
+## Manual execution
+
+```powershell
+# If the sound file is in the same folder
 .\keyboard-click.ps1
 
-# Con un suono diverso
-.\keyboard-click.ps1 -SoundPath "C:\percorso\altro-suono.wav"
+# With a different sound
+.\keyboard-click.ps1 -SoundPath "C:\path\to\another-sound.wav"
 ```
 
 ## Stop
 
 ```powershell
-# Da PowerShell
+# From PowerShell
 Get-Process powershell | Where-Object { $_.MainWindowTitle -eq "" } | Stop-Process
 
-# Oppure da Task Manager: termina il processo "powershell" senza finestra
+# Or from Task Manager: end the windowless "powershell" process
 ```
 
-## Note
+## Notes
 
-- Usa le API Win32 `SetWindowsHookEx` (low-level keyboard hook)
-- Il file `.wav` deve essere in formato PCM WAV (non MP3)
-- Nessuna dipendenza esterna: solo PowerShell + .NET integrato
+- Uses the Win32 `SetWindowsHookEx` API (low-level keyboard hook)
+- The `.wav` file must be in PCM WAV format (not MP3)
