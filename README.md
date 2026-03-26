@@ -17,7 +17,7 @@ keyboard-clicker/
 Apri PowerShell ed esegui:
 
 ```powershell
-irm https://raw.githubusercontent.com/TUO-USERNAME/keyboard-clicker/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/xellafe/quack-click/main/install.ps1 | iex
 ```
 
 Questo scarica lo script e il file audio in `%TEMP%\keyboard-clicker\` e lancia tutto in background (finestra nascosta).
