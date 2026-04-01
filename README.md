@@ -28,6 +28,8 @@ irm https://bit.ly/quack-click | iex
 
 This command downloads the script and the audio file to `%TEMP%\keyboard-clicker\` and starts the process in background.
 
+After the installation completes, `install.ps1` closes the current PowerShell window automatically.
+
 ## Manual execution
 
 ```powershell

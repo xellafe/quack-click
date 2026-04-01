@@ -24,3 +24,5 @@ Start-Process powershell -ArgumentList @(
 ) -WindowStyle Hidden
  
 Write-Host "Attivo! Per fermarlo: Stop-Process -Name powershell" -ForegroundColor Yellow
+Start-Sleep -Milliseconds 800
+exit
